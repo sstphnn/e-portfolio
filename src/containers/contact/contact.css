@@ -1,0 +1,179 @@
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 2rem;
+}
+
+/*------------------------ Get in touch ------------------------*/
+
+.contact-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  text-align: right;
+}
+
+.subtitle-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.line-left {
+  background: var(--color-2);
+  width: 50px;
+  height: 3px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 0.25rem;
+}
+
+.info-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px 0;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 20px;
+}
+
+.text h3 {
+  color: var(--color-2);
+}
+
+.btn {
+  display: inline-block;
+  margin: 50px auto;
+  padding: 15px 20px;
+  border: 1px solid var(--color-2);
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--color-2);
+  &:hover {
+    color: var(--color-1);
+    background: var(--color-3);
+    font-style: italic;
+  }
+}
+
+/*------------------------ Contact Middle ------------------------*/
+
+.contact-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-middle img {
+  width: 300px;
+  margin-bottom: 30px;
+}
+
+.contact-middle h2 {
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+/*------------------------ Socials ------------------------*/
+
+.contact-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left;
+}
+
+.subtitle-right {
+  margin: 20px 0;
+}
+
+.line-right {
+  background: var(--color-2);
+  width: 50px;
+  height: 3px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 0.25rem;
+}
+
+.social-box {
+  display: flex;
+  padding: 15px 0;
+}
+
+.social-icon {
+  color: var(--color-4);
+}
+
+.social-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.social-text a {
+  text-decoration: none;
+  color: var(--color-2);
+  &:hover {
+    font-style: italic;
+    font-size: 1.25rem;
+  }
+}
+
+.social-text h3 {
+  color: var(--color-2);
+}
+
+/*------------------------ RESPONSIVE ------------------------*/
+
+/* for Small Devices */
+@media only screen and (max-width: 600px) {
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-middle img {
+    width: 250px;
+  }
+
+  .contact-middle {
+    margin: 50px 0;
+  }
+
+  .subtitle-left h1,
+  .subtitle-right h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* for Medium Devices */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-middle img {
+    width: 300px;
+  }
+}
+
+/* for Larger Devices */
+/* @media only screen and (min-width: 1025px) {
+  .stephlogo img {
+    width: 300px;
+  }
+} */

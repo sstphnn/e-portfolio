@@ -1,38 +1,242 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: var(--font-family);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: var(--color-1);
+  color: var(--color-4);
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+a {
+  color: unset;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    color: var(--color-2);
+    font-style: italic;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.section__padding {
+  padding: 8rem 8rem;
+}
+
+.section__margin {
+  padding: 4rem 6rem;
+}
+
+/*------------------------ Title ------------------------*/
+
+.title {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  padding: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.title h1 {
+  font-size: 2.5rem;
+  font-style: italic;
 }
 
-@keyframes App-logo-spin {
-  from {
+.title div {
+  background: var(--color-2);
+  width: 150px;
+  height: 3px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 0.25rem;
+}
+
+/*------------------------ Faders ------------------------*/
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-30%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.appear.slide-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-down {
+  opacity: 0;
+  transform: translateY(20%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.appear.slide-down {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(-30%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.appear.slide-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/*------------------------ Loader ------------------------*/
+
+.loader-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newtons-cradle {
+  --uib-size: 100px;
+  --uib-speed: 1.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--uib-size);
+}
+
+.newtons-cradle__letter {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 25%;
+  transform-origin: center top;
+}
+
+.newtons-cradle__letter h1 {
+  font-weight: 900;
+}
+
+.newtons-cradle__letter::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 25%;
+  border-radius: 50%;
+  background-color: var(--uib-color);
+}
+
+.newtons-cradle__letter:first-child {
+  animation: swing var(--uib-speed) linear infinite;
+}
+
+.newtons-cradle__letter:last-child {
+  animation: swing2 var(--uib-speed) linear infinite;
+}
+
+@keyframes swing {
+  0% {
     transform: rotate(0deg);
+    animation-timing-function: ease-out;
   }
-  to {
-    transform: rotate(360deg);
+
+  25% {
+    transform: rotate(70deg);
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes swing2 {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
+  }
+
+  75% {
+    transform: rotate(-70deg);
+    animation-timing-function: ease-in;
+  }
+}
+
+/*------------------------ RESPONSIVE ------------------------*/
+@media screen and (min-width: 1050px) {
+  .slide-right {
+    transform: translateX(30%);
+  }
+}
+
+@media screen and (max-width: 1050px) {
+}
+
+@media screen and (max-width: 990px) {
+}
+
+@media screen and (max-width: 950px) {
+}
+
+@media screen and (max-width: 850px) {
+  .section__padding {
+    padding: 4rem 2rem;
+  }
+  .section__margin {
+    padding: 4rem 2rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+}
+
+@media screen and (max-width: 650px) {
+}
+
+@media screen and (max-width: 550px) {
+}
+
+@media screen and (max-width: 490px) {
+}
+
+@media screen and (max-width: 700px) {
+  .section__padding {
+    padding: 4rem;
+  }
+  .section__margin {
+    padding: 4rem;
+  }
+  .title h1 {
+    font-size: 2rem;
+  }
+  .title div {
+    width: 125px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .section__padding {
+    padding: 4rem 2rem;
+  }
+  .section__margin {
+    padding: 4rem 2rem;
   }
 }

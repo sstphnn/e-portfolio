@@ -1,0 +1,13 @@
+.copyright {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background: var(--color-4);
+  color: var(--color-1);
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.copyright span {
+  color: rgb(218, 0, 0);
+}

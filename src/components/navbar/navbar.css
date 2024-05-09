@@ -1,0 +1,48 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  opacity: 0;
+  animation: slideFromTop 1s ease forwards;
+  z-index: 100;
+  background: var(--color-1);
+}
+
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  gap: 5rem;
+}
+
+.navbar-links a {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+/*------------------------ RESPONSIVE ------------------------*/
+
+@media screen and (max-width: 1050px) {
+  .navbar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+}
+
+@media screen and (max-width: 550px) {
+}
